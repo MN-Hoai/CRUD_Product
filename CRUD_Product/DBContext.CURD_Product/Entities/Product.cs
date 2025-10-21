@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-
 namespace DBContext.CURD_Product;
 
 public partial class Product
@@ -33,7 +32,11 @@ public partial class Product
 
     public int? UpdateBy { get; set; }
 
+    public int? MediaId { get; set; }
+
     public virtual Account CreateByNavigation { get; set; }
+
+    public virtual MediaFile Media { get; set; }
 
     public virtual ProductCategory ProductCategory { get; set; }
 }

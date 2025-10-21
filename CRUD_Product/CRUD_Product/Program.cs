@@ -1,5 +1,6 @@
 ﻿using DBContext.CURD_Product;
 using Microsoft.EntityFrameworkCore;
+using Service.CRUD_Product;
 using Service.CURD_Product;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -22,6 +23,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Đăng ký service xử lý logic sản phẩm
 builder.Services.AddScoped<ProductCommand>();
+builder.Services.AddScoped<MediaCommand>();
 builder.Services.AddScoped<ProductMany>();
 builder.Services.AddScoped<ProductModel>();
 builder.Services.AddScoped<ProductOne>();

@@ -20,6 +20,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[MediaFiles]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[ProductCategories]",
          "ObjectType": 0
       },

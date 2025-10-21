@@ -253,6 +253,72 @@
         }
     });
     // ----------------------------------
+
+    $("#btnUpload").on("click", async function (e) {
+        e.preventDefault(); // 🔥 chặn hành vi submit form mặc định
+        const file = $("#avatar-file-upload")[0].files[0];
+        if (!file) return alert("Chưa chọn file!");
+
+        const chunkSize = 3 * 1024 * 1024; // 2MB mỗi chunk
+        const totalChunks = Math.ceil(file.size / chunkSize);
+        const fileCode = self.crypto.randomUUID();
+
+        $("#progressBox").html(`<p>Đang upload: <b>${file.name}</b></p>
+    <div class="progress">
+        <div class="progress-bar" style="width:0%">0%</div>
+    </div>`);
+
+        for (let i = 0; i < totalChunks; i++) {
+            const start = i * chunkSize;
+            const end = Math.min(file.size, start + chunkSize);
+            const blob = file.slice(start, end);
+
+            const formData = new FormData();
+            formData.append("file", blob);
+            formData.append("fileCode", fileCode);
+            formData.append("chunkNumber", i + 1);
+
+            await $.ajax({
+                url: "/media/upload-chunk",
+                method: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+            });
+
+            const percent = Math.round(((i + 1) / totalChunks) * 100);
+            $(".progress-bar").css("width", percent + "%").text(percent + "%");
+        }
+
+        // Merge file sau khi upload xong
+        const mergeData = {
+            FileCode: fileCode,
+            FileName: file.name,
+            Count: totalChunks,
+        };
+
+        await $.ajax({
+            url: "/media/merge-chunks",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(mergeData),
+            success: (res) => {
+                if (res.success) {
+                    $("#progressBox").append(
+                        `<p class="text-success mt-2">✅ Upload hoàn tất: 
+              <a href='/${res.file.filePath}' target='_blank'>Xem ảnh</a></p>`
+                    );
+                }
+            },
+        });
+    });
+
+
+
+
+
+
+
 });
 
 // Hàm load sản phẩm theo bộ lọc
@@ -743,3 +809,7 @@ function resetFilters() {
 
     loadProducts(); 
 }
+
+
+  
+

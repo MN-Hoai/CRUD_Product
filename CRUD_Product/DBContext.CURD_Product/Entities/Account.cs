@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 
 namespace DBContext.CURD_Product;
-
 public partial class Account
 {
     public int Id { get; set; }
@@ -26,6 +25,8 @@ public partial class Account
     public DateTime? CreateDate { get; set; }
 
     public int? UpdateBy { get; set; }
+
+    public virtual ICollection<MediaFile> MediaFiles { get; set; } = new List<MediaFile>();
 
     public virtual ICollection<ProductCategory> ProductCategories { get; set; } = new List<ProductCategory>();
 

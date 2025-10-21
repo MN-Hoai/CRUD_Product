@@ -479,4 +479,8 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\media\images\2025\10\21\318316920_454044880231419_5894875641270817216_n.jpg
+wwwroot\media\images\2025\10\21\anime-moon-landscape.jpg
+wwwroot\media\images\2025\10\21\apple-chlorotic-leaf-spot-virus-apple-1581502029.jpg
+wwwroot\media\images\2025\10\21\cat.jpg
 wwwroot\media\images\products\default-product.jpg

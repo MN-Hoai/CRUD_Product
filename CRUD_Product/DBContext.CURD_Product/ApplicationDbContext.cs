@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-
 namespace DBContext.CURD_Product;
 
 public partial class ApplicationDbContext : DbContext
@@ -14,6 +13,8 @@ public partial class ApplicationDbContext : DbContext
     }
 
     public virtual DbSet<Account> Accounts { get; set; }
+
+    public virtual DbSet<MediaFile> MediaFiles { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
 
@@ -42,6 +43,19 @@ public partial class ApplicationDbContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<MediaFile>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_Media");
+
+            entity.Property(e => e.FileCode).HasMaxLength(225);
+            entity.Property(e => e.MimeType).HasMaxLength(225);
+            entity.Property(e => e.UploadDate).HasColumnType("datetime");
+
+            entity.HasOne(d => d.UploadedByNavigation).WithMany(p => p.MediaFiles)
+                .HasForeignKey(d => d.UploadedBy)
+                .HasConstraintName("FK_MediaFiles_Accounts");
+        });
+
         modelBuilder.Entity<Product>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Products__3214EC0760EF09B6");
@@ -61,6 +75,10 @@ public partial class ApplicationDbContext : DbContext
             entity.HasOne(d => d.CreateByNavigation).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CreateBy)
                 .HasConstraintName("FK_Products_Accounts");
+
+            entity.HasOne(d => d.Media).WithMany(p => p.Products)
+                .HasForeignKey(d => d.MediaId)
+                .HasConstraintName("FK_Products_Media");
 
             entity.HasOne(d => d.ProductCategory).WithMany(p => p.Products)
                 .HasForeignKey(d => d.ProductCategoryId)

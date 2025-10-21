@@ -27,7 +27,10 @@
                         <input type="text" class="form-control" id="productCategory" placeholder="Nhập để tạo danh mục mới">
 
                     </div>
+                    <input class="form-control" id="avatar-file-upload" type="file"
+                           accept="image/png, image/gif, image/jpeg">
 
+                    <button id="btnUpload" type="button">Upload</button>
 
                     <div class="mb-3">
                         <label class="form-label fw-bold">Giá</label>
@@ -59,10 +62,15 @@
                                                 </div>
                                             </div>
                                         </label>
-                                        <input class="form-control d-none" id="avatar-file-upload" type="file"
+                                      @*   <input class="form-control" id="avatar-file-upload" type="file"
                                                accept="image/png, image/gif, image/jpeg">
+
+                                        <button id="btnUpload" type="button">Upload</button> *@
                                     </div>
 
+                                 
+                              
+                                  
                                     <div class="avatar-xxl">
                                         <div class="avatar-title bg-light rounded">
                                             <img class="avatar-preview avatar-xxl p-2 h-auto" id="productAvatar"
@@ -71,7 +79,7 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
+                         </div>
                             <div class="input-group mt-2">
                                 <input type="text" class="form-control avatar-file-url" id="avatarUrl" placeholder="Url hình đại diện" readonly>
                                 <a class="btn btn-icon border bg-light text-danger avatar-remove" href="#">
@@ -79,13 +87,15 @@
                                 </a>
                             </div>
                         </div>
-
+                         
                     <div class="d-flex justify-content-end gap-2">
                         <button type="button" class="btn btn-secondary" id="btnCloseModal" data-bs-dismiss="modal">Đóng</button>
                         <button type="button" class="btn btn-success d-none" id="btnSaveEdit">Lưu thay đổi</button>
                     </div>
                 </form>
+            <div id="progressBox"></div>
             </div>
         </div>
     </div>
 </div>
+
