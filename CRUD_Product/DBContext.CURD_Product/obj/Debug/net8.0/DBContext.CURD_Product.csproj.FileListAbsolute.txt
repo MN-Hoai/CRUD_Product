@@ -1,0 +1,15 @@
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\bin\Debug\net8.0\DBContext.CURD_Product.deps.json
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\bin\Debug\net8.0\DBContext.CURD_Product.runtimeconfig.json
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\bin\Debug\net8.0\DBContext.CURD_Product.dll
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\bin\Debug\net8.0\DBContext.CURD_Product.pdb
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\obj\Debug\net8.0\DBContext.CURD_Product.csproj.AssemblyReference.cache
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\obj\Debug\net8.0\DBContext.CURD_Product.GeneratedMSBuildEditorConfig.editorconfig
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\obj\Debug\net8.0\DBContext.CURD_Product.AssemblyInfoInputs.cache
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\obj\Debug\net8.0\DBContext.CURD_Product.AssemblyInfo.cs
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\obj\Debug\net8.0\DBContext.CURD_Product.csproj.CoreCompileInputs.cache
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\obj\Debug\net8.0\DBContext.CURD_Product.sourcelink.json
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\obj\Debug\net8.0\DBContext.CURD_Product.dll
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\obj\Debug\net8.0\refint\DBContext.CURD_Product.dll
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\obj\Debug\net8.0\DBContext.CURD_Product.pdb
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\obj\Debug\net8.0\DBContext.CURD_Product.genruntimeconfig.cache
+D:\ForBusiness\CRUD_Product\CRUD_Product\DBContext.CURD_Product\obj\Debug\net8.0\ref\DBContext.CURD_Product.dll

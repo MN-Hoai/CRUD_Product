@@ -1,0 +1,91 @@
+﻿<!--Modal xem/sửa sản phẩm -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="text-white mb-3" id="modalTitle"></h5>
+                <button type="button" class="btn-close btn-close-white mb-2" data-bs-dismiss="modal" aria-label="Đóng"></button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm">
+                    <input type="hidden" id="productId" />
+                    <input type="hidden" id="productCategoryId" />
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Tên sản phẩm</label>
+                        <input type="text" class="form-control" id="productTitle">
+                    </div>
+                    <label class="form-label fw-bold">Danh mục</label>
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <select id="categoryFilterOption" class=" form-control form-select bg-light border-light" style="width: 200px;">
+                                <option value="">Tất cả danh mục</option>
+                                <!-- Category options -->
+                            </select>
+                        </div>
+
+
+                        <input type="text" class="form-control" id="productCategory" placeholder="Nhập để tạo danh mục mới">
+
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Giá</label>
+                        <input type="number" class="form-control" id="productPrice">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Số lượng</label>
+                        <input type="number" class="form-control" id="productQuantity">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Từ khóa</label>
+                        <input type="text" class="form-control" id="productKeywords">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Mô tả</label>
+                        <textarea class="form-control" id="productDescription" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <div class="card-body pb-0 avatar-container">
+                            <label class="form-label">Hình đại diện</label>
+                            <div class="text-center">
+                                <div class="position-relative d-flex justify-content-center border border-dark rounded">
+                                    <div class="position-absolute top-0 start-100 translate-middle">
+                                        <label for="avatar-file-upload" class="mb-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Upload ảnh đại diện">
+                                            <div class="avatar-xs">
+                                                <div class="avatar-title bg-light border rounded-circle text-muted cursor-pointer">
+                                                    <i class="ri-upload-cloud-2-fill"></i>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <input class="form-control d-none" id="avatar-file-upload" type="file"
+                                               accept="image/png, image/gif, image/jpeg">
+                                    </div>
+
+                                    <div class="avatar-xxl">
+                                        <div class="avatar-title bg-light rounded">
+                                            <img class="avatar-preview avatar-xxl p-2 h-auto" id="productAvatar"
+                                                 src="/media/images/products/default-product.jpg" alt="avatar preview" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="input-group mt-2">
+                                <input type="text" class="form-control avatar-file-url" id="avatarUrl" placeholder="Url hình đại diện" readonly>
+                                <a class="btn btn-icon border bg-light text-danger avatar-remove" href="#">
+                                    <i class="ri-delete-bin-5-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-secondary" id="btnCloseModal" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-success d-none" id="btnSaveEdit">Lưu thay đổi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
